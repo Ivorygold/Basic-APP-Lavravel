@@ -174,3 +174,4 @@ class AboutController extends Controller
             }//end Method
 
 }
+
