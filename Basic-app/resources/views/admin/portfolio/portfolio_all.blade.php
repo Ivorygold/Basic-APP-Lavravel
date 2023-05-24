@@ -44,7 +44,7 @@
                                   <td>{{ $item->portfolio_title}}</td>
                                   <!-- to display the image, use image tag and call it using the DBname -->
                                   <td><img src="{{asset($item->portfolio_image)}}" style="width:60px; height:50px;"></td>
-                                  <td><a href="{{route('edit.multi.image', $item->id)}}" class="btn btn-info sm"  title="Edit Data"> <i class="fas fa-edit"></i></a>       
+                                  <td><a href="{{route('edit.portfolio', $item->id)}}" class="btn btn-info sm"  title="Edit Data"> <i class="fas fa-edit"></i></a>       
                                  <a href="{{route('delete.multi.image', $item->id)}}" class="btn btn-danger sm"  title="Delete Data" id="delete"> <i class="fas fa-trash-alt"></i></a></td>                          
                                 </tr>
                               @endforeach
