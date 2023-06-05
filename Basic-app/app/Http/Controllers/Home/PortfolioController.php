@@ -17,7 +17,7 @@ class PortfolioController extends Controller
     }// end Method
 
     public function AddPortfolio(){
-        return view('admin.portfolio.portfolio_add');
+        return view ('admin.portfolio.portfolio_add');
 
     }// end Method
 

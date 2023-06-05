@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\PortfolioController;
+use App\Http\Controllers\Home\BlogCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,6 +79,18 @@ Route::controller('PortfolioController')->group(function () {
     Route::post('/update/Portfolio', [PortfolioController::class, 'UpdatePortfolio'])->name('update.Portfolio');
     Route::get('/delete/Portfolio/{id}', [PortfolioController::class, 'DeletePortfolio'])->name('delete.portfolio');
     Route::get('/portfolio/details/{id}', [PortfolioController::class, 'PortfolioDetails'])->name('portfolio.details');
+});
+
+//Blog Slide all Route
+Route::controller('BlogCategoryController')->group(function () {
+    Route::get('/all/blog/category', [BlogCategoryController::class, 'AllBlogCategory'])->name('all.blog.category');
+    Route::get('/add/blog/category', [BlogCategoryController::class, 'AddBlogCategory'])->name('add.blog.category');
+    Route::post('/store/blog/category', [BlogCategoryController::class, 'StoreBlogCategory'])->name('store.blog.category');
+    Route::get('/edit/blog/category/{id}', [BlogCategoryController::class, 'EditBlogCategory'])->name('edit.blog.category');
+    Route::post('/update/blog/category/{id}', [BlogCategoryController::class, 'UpdateBlogCategory'])->name('update.blog.category');
+    Route::get('/delete/blog/category/{id}', [BlogCategoryController::class, 'DeleteBlogCategory'])->name('delete.blog.category');
+   
+    
 });
 
 
