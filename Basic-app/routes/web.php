@@ -99,6 +99,9 @@ Route::controller('BlogController')->group(function () {
     Route::get('/all/blog', [BlogController::class, 'AllBlog'])->name('all.blog');
     Route::get('/add/blog', [BlogController::class, 'AddBlog'])->name('add.blog');
     Route::post('/store/blog', [BlogController::class, 'StoreBlog'])->name('store.blog');
+    Route::get('/edit/blog/{id}', [BlogController::class, 'EditBlog'])->name('edit.blog');
+    Route::post('/update/blog', [BlogController::class, 'UpdateBlog'])->name('update.blog');
+    Route::get('/delete/blog/{id}', [BlogController::class, 'DeleteBlog'])->name('delete.blog');
    
    
     

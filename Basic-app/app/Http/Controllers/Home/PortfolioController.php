@@ -67,7 +67,7 @@ class PortfolioController extends Controller
         $portfolio = Portfolio::findOrFail($id);
         return view('admin.portfolio.portfolio_edit', compact('portfolio'));
 
-    }//nd method
+    }//end method
 
     public function UpdatePortfolio(request $request) {
         $portfolio_id = $request->id;
