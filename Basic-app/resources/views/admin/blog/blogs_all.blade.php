@@ -41,7 +41,10 @@
                                 @foreach($blogs as $item)
                               <tr>
                                   <td>{{ $i++ }}</td>
-                                  <td>{{ $item->blog_category_id}}</td>
+                                  <!-- b4 finding the relationship -->
+                                  <!-- <td>{{ $item->blog_category_id}}</td> -->
+                                  <!-- having found the relationship from model-->
+                                  <td>{{ $item['category']['blog_category']}}</td>
                                   <td>{{ $item->blog_title}}</td>
                                   <td>{{ $item->blog_tags}}</td>
                                   <!-- to display the image, use image tag and call it using the DBname -->

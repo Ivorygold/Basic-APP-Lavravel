@@ -18,9 +18,9 @@
           <div class="card">
               <div class="card-body">
 
-                  <h4 class="card-title">Blog Page</h4><br><br>
+                  <h4 class="card-title">Add Blog Page</h4><br><br>
 
-                  <form method="post" action="{{route('store.Portfolio')}}" enctype="multipart/form-data">
+                  <form method="post" action="{{route('store.blog')}}" enctype="multipart/form-data">
                   @csrf
 
 
@@ -28,10 +28,12 @@
                       <label for="example-text-input" class="col-sm-2 col-form-label">Blog Category Name</label>
                       <div class="col-sm-10">
                       <select name="blog_category_id" class="form-select" aria-label="Default select example">
-                            <option selected="">Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option selected="">Open this to select Blog category</option>
+
+                            <!-- because is a multiple data, we loop through the data using foreach method -->
+                            @foreach($categories as $CatItem)
+                            <option value="{{$CatItem->id}}">{{$CatItem->blog_category}}</option>
+                            @endforeach
                             </select>
                       </div>
                   </div>
