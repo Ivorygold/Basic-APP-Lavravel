@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="{{asset('frontend/assets/css/responsive.css')}}">
     </head>
     <body>
+        
 
         <!-- preloader-start -->
         <div id="preloader">

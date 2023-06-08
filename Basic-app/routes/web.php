@@ -102,6 +102,10 @@ Route::controller('BlogController')->group(function () {
     Route::get('/edit/blog/{id}', [BlogController::class, 'EditBlog'])->name('edit.blog');
     Route::post('/update/blog', [BlogController::class, 'UpdateBlog'])->name('update.blog');
     Route::get('/delete/blog/{id}', [BlogController::class, 'DeleteBlog'])->name('delete.blog');
+    Route::get('/blog/details/{id}', [BlogController::class, 'BlogDetails'])->name('blog.details');
+    Route::get('/category/blog/{id}', [BlogController::class, 'CategoryBlog'])->name('category.blog');
+
+    Route::get('/blog', [BlogController::class, 'HomeBlog'])->name('home.blog');
    
    
     

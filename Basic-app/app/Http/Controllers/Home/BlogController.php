@@ -10,6 +10,7 @@ use App\Models\BlogCategory;
 use Illuminate\Support\Carbon;
 use Image;
 
+
 class BlogController extends Controller
 {
     public function AllBlog() {
@@ -147,5 +148,35 @@ public function DeleteBlog($id) {
             return redirect()->back()->with($notification);
 
 }//end method
+
+public function BlogDetails($id) {
+
+  $allBlogs = Blog::latest()->limit(5)->get();
+  $categories = BlogCategory::orderBy('blog_category','ASC')->get();
+  $blogs = Blog::findOrFail($id);
+  return view('frontend.blog_details', compact('blogs','allBlogs','categories'));
+
+}//end method
+
+public function CategoryBlog($id) {
+  //when our blog_category_id match our request id then get blog category related data
+
+  $CategoryBlogPost = Blog::where('blog_category_id',$id)->orderBy('id','DESC')->get();
+  $allBlogs = Blog::latest()->limit(5)->get();
+  $categories = BlogCategory::orderBy('blog_category','ASC')->get();
+  $categoryName = BlogCategory::findOrFail($id);
+  return view('frontend.cat_blog_details',compact('CategoryBlogPost','allBlogs','categories','categoryName'));
+
+}//end method
+
+public function HomeBlog() {
+
+  $allBlogs = Blog::latest()->get();
+  $categories = BlogCategory::orderBy('blog_category','ASC')->get();
+  return view('frontend.blog',compact('allBlogs','categories'));
+
+}//end method
+
+
     
 }
