@@ -1,6 +1,10 @@
 @extends('frontend.main_master')
 @section('main')
 
+@section('title')
+About | UDEMBA's Web Site
+@endsection
+
      
         <main>
 
