@@ -11,7 +11,7 @@
                     <li class="menu-title">Menu</li>
 
                     <li>
-                        <a href="index.html" class="waves-effect">
+                        <a href="#" class="waves-effect">
                             <i class="ri-dashboard-line"></i><span class="badge rounded-pill bg-success float-end">3</span>
                             <span>Dashboard</span>
                         </a>
@@ -90,6 +90,17 @@
                         <ul class="sub-menu" aria-expanded="false">
                             <li><a href="{{route('footer.setup')}}">Footer Setup</a></li>
                            
+                            
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="ri-profile-line"></i>
+                            <span>Message</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="{{route('contact.message')}}">Contact Message</a></li>
                             
                         </ul>
                     </li>
