@@ -35,7 +35,7 @@
                               </thead>
 
                               <tbody>
-                                <!-- to visible the serial number -->
+                                <!-- to visible the serial number we can use $key + 1 or php code block as used here-->
                                 @php($i = 1)
                                 @foreach($portfolio as $item)
                               <tr>

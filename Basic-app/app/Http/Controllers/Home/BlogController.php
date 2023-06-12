@@ -171,7 +171,7 @@ public function CategoryBlog($id) {
 
 public function HomeBlog() {
 
-  $allBlogs = Blog::latest()->get();
+  $allBlogs = Blog::latest()->paginate(2);
   $categories = BlogCategory::orderBy('blog_category','ASC')->get();
   return view('frontend.blog',compact('allBlogs','categories'));
 

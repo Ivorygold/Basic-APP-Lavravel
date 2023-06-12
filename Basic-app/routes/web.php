@@ -30,9 +30,6 @@ use App\Http\Controllers\Home\ContactController;
 
 Route::controller('DemoController')->group(function () {
     Route::get('/home', [DemoController::class, 'Home'])->name('home');
-    
-   
-    
 });
 
 Route::get('/dashboard', function () {
@@ -47,15 +44,18 @@ Route::middleware('auth')->group(function () {
 });
 
 //Admin all Route
+Route::middleware(['auth'])->group(function () {
+
 Route::controller('adminController')->group(function () {
     Route::get('/admin/logout', [adminController::class, 'destroy'])->name('admin.logout');
     Route::get('/admin/profile', [adminController::class, 'Profile'])->name('admin.profile');
     Route::get('/edit/profile', [adminController::class, 'EdithProfile'])->name('edit.profile');
     Route::post('/store/profile', [adminController::class, 'StoreProfile'])->name('store.profile');
 
-    Route::get('/change/password', [adminController::class, 'ChangePassword'])->name('change.password');
-    Route::post('/update/password', [adminController::class, 'UpdatePassword'])->name('update.password');
-    
+    Route::get('/change/password', [adminController::class, 'ChangePassword'])->name('change.password')->middleware('auth');
+    Route::post('/update/password', [adminController::class, 'UpdatePassword'])->name('update.password');  
+});
+
 });
 
 //Home Slide all Route
