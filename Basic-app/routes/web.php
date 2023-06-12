@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DemoController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeSliderController;
@@ -23,8 +24,15 @@ use App\Http\Controllers\Home\ContactController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
+// Route::get('/', function () {
+//     return view('frontend.index');
+// });
+
+Route::controller('DemoController')->group(function () {
+    Route::get('/home', [DemoController::class, 'Home'])->name('home');
+    
+   
+    
 });
 
 Route::get('/dashboard', function () {
